@@ -5,3 +5,5 @@ export const UserSchema = v.object({
   name: v.string(),
   email: v.pipe(v.string(), v.email()),
 })
+
+export type User = v.InferInput<typeof UserSchema>
