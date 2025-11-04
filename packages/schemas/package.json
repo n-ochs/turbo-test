@@ -1,0 +1,26 @@
+{
+  "name": "@repo/schemas",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "dependencies": {
+    "valibot": "^1.1.0"
+  },
+  "devDependencies": {
+    "@total-typescript/tsconfig": "latest"
+  }
+}

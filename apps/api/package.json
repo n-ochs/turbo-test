@@ -1,13 +1,12 @@
 {
   "name": "api",
   "version": "0.0.1",
+  "private": true,
   "description": "",
   "author": "",
-  "private": true,
   "license": "UNLICENSED",
   "scripts": {
     "build": "nest build",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
@@ -24,8 +23,10 @@
     "@nestjs/common": "^11.0.1",
     "@nestjs/core": "^11.0.1",
     "@nestjs/platform-express": "^11.0.1",
+    "@repo/schemas": "*",
     "reflect-metadata": "^0.2.2",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.1",
+    "valibot": "^1.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
@@ -33,6 +34,7 @@
     "@nestjs/cli": "^11.0.0",
     "@nestjs/schematics": "^11.0.0",
     "@nestjs/testing": "^11.0.1",
+    "@repo/eslint-config": "*",
     "@types/express": "^5.0.0",
     "@types/jest": "^30.0.0",
     "@types/node": "^22.10.7",

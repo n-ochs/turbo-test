@@ -1,8 +1,8 @@
 {
   "name": "web",
+  "type": "module",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
   "engines": {
     "node": "^20.19.0 || >=22.12.0"
   },
@@ -10,15 +10,20 @@
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
     "test": "vitest",
     "test:e2e": "playwright test",
     "build-only": "vite build",
     "type-check": "vue-tsc --build"
   },
   "dependencies": {
+    "@repo/schemas": "*",
     "pinia": "^3.0.3",
+    "valibot": "^1.1.0",
     "vue": "^3.5.22",
     "vue-router": "^4.6.3"
+
   },
   "devDependencies": {
     "@playwright/test": "^1.56.1",

@@ -1,13 +1,14 @@
-import antfu from '@antfu/eslint-config'
+import { config as baseConfig } from './base.js'
 
 /**
  * @type {import("@antfu/eslint-config").Rules}
  */
 export const rules = {
-  'node/prefer-global/process': 'off',
   'ts/consistent-type-imports': 'off',
 }
 
-export const config = antfu({
-  rules,
-})
+export const config = baseConfig.append([
+  {
+    rules,
+  },
+])
