@@ -1,0 +1,15 @@
+packages:
+  - apps/*
+  - packages/*
+
+onlyBuiltDependencies:
+  - '@nestjs/core'
+  - esbuild
+  - unrs-resolver
+
+public-hoist-pattern:
+  - eslint
+  - typescript
+  - vite
+  - vitest
+  - playwright*
