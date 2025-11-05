@@ -9,6 +9,12 @@
       "import": "./dist/index.js",
       "require": "./dist/index.js",
       "default": "./dist/index.js"
+    },
+    "./db": {
+      "types": "./dist/db/schema/index.d.ts",
+      "import": "./dist/db/schema/index.js",
+      "require": "./dist/db/schema/index.js",
+      "default": "./dist/db/schema/index.js"
     }
   },
   "main": "dist/index.js",
@@ -16,10 +22,16 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsup",
+    "dev": "tsup --watch --dts",
     "lint": "eslint",
     "lint:fix": "eslint --fix"
   },
   "dependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "drizzle-orm": "^0.44.7",
+    "drizzle-valibot": "^0.4.2",
+    "eslint": "^9.39.1",
+    "uuid": "^13.0.0",
     "valibot": "^1.1.0"
   },
   "devDependencies": {

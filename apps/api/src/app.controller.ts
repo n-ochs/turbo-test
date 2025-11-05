@@ -1,6 +1,7 @@
 import type { User } from '@repo/schemas'
 import { Body, Controller, Get, Logger, Post, UsePipes } from '@nestjs/common'
 import { UserSchema } from '@repo/schemas'
+import { CreateUserSchema } from '@repo/schemas/db'
 import * as v from 'valibot'
 import { AppService } from './app.service'
 import { ValibotValidationPipe } from './pipes/valibot.pipe'
@@ -28,7 +29,7 @@ export class AppController {
   }
 
   @Post()
-  @UsePipes(new ValibotValidationPipe(UserSchema))
+  @UsePipes(new ValibotValidationPipe(CreateUserSchema))
   createUser(@Body() user: User) {
     return user
   }
