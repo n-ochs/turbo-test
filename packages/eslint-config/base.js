@@ -9,5 +9,6 @@ export const rules = {
 }
 
 export const config = antfu({
+  ignores: ['**/dist/**', '**/build/**', '**/output/**', '**/.turbo/**'],
   rules,
 })

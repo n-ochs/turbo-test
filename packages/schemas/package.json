@@ -7,20 +7,23 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
+      "require": "./dist/index.js",
       "default": "./dist/index.js"
     }
   },
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc",
+    "build": "tsup",
     "lint": "eslint",
-    "lint:fix": "eslint --fix",
-    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+    "lint:fix": "eslint --fix"
   },
   "dependencies": {
     "valibot": "^1.1.0"
   },
   "devDependencies": {
-    "@total-typescript/tsconfig": "latest"
+    "@total-typescript/tsconfig": "^1.0.4",
+    "tsup": "^8.5.0"
   }
 }

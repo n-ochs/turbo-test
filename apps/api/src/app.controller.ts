@@ -1,7 +1,9 @@
-import { Controller, Get, Logger } from '@nestjs/common'
+import type { User } from '@repo/schemas'
+import { Body, Controller, Get, Logger, Post, UsePipes } from '@nestjs/common'
 import { UserSchema } from '@repo/schemas'
 import * as v from 'valibot'
 import { AppService } from './app.service'
+import { ValibotValidationPipe } from './pipes/valibot.pipe'
 
 @Controller()
 export class AppController {
@@ -23,5 +25,11 @@ export class AppController {
       this.logger.error(`Error parsing user: ${error}`)
     }
     return this.appService.getHello()
+  }
+
+  @Post()
+  @UsePipes(new ValibotValidationPipe(UserSchema))
+  createUser(@Body() user: User) {
+    return user
   }
 }
