@@ -7,9 +7,5 @@
     "./base": "./base.js",
     "./nest": "./nest.js",
     "./vue": "./vue.js"
-  },
-  "devDependencies": {
-    "@antfu/eslint-config": "^6.2.0",
-    "eslint": "^9.39.1"
   }
 }
