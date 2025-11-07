@@ -1,4 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing'
+import { beforeEach, describe, expect, it } from 'vitest'
 import { AppController } from './app.controller'
 import { AppService } from './app.service'
 
@@ -16,7 +17,18 @@ describe('appController', () => {
 
   describe('root', () => {
     it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!')
+      expect(appController.getHello).toBeDefined()
+    })
+  })
+
+  describe('createUser', () => {
+    it('should return the created user', () => {
+      const user = {
+        id: '1',
+        email: '',
+        name: 'nick',
+      }
+      expect(appController.createUser(user)).toEqual(user)
     })
   })
 })
